@@ -1,0 +1,2 @@
+Homepage URL: https://trabalhouni-cloudfare-page.pages.dev
+callback URL: https://trabalhouni-cloudfare-page.pages.dev/oauth/callback/github
