@@ -19,18 +19,16 @@ export function base64urlToString(text) {
   return new TextDecoder().decode(base64urlToBytes(text));
 }
 
-// 32 bytes aleatorios em Base64URL sem preenchimento (43 caracteres)
+
 export function randomToken() {
   return bytesToBase64url(crypto.getRandomValues(new Uint8Array(32)));
 }
 
-// SHA-256 em Base64URL (usado em code_challenge e nos resumos guardados no D1)
 export async function sha256Base64url(text) {
   const digest = await crypto.subtle.digest("SHA-256", encoder.encode(text));
   return bytesToBase64url(new Uint8Array(digest));
 }
 
-// Comparacao em tempo constante
 export function safeEqual(a, b) {
   if (typeof a !== "string" || typeof b !== "string" || a.length !== b.length) {
     return false;
